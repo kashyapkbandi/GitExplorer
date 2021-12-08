@@ -1,0 +1,24 @@
+<template>
+               <!-- vertical nav -->
+               <button class={cssClass} onclick={handleToggle}> {connectstatus} </button>
+               <div class="demo-only" style="width:80%;">
+                <nav class="slds-nav-vertical" aria-label="Sub page">
+                    <div class="slds-nav-vertical__section">
+                        <h2 id="entity-header" class="slds-nav-vertical__title">Repositories</h2>
+                        <ul aria-describedby="entity-header">
+
+                        <template for:each={data} for:item="dataItem">
+                            <li key={dataItem.id} class="slds-nav-vertical__item">
+                                <a href="#" onclick={handleselection} class="slds-nav-vertical__action" aria-current="true" data-id={dataItem.id}>{dataItem.name}
+                                    <span class="slds-badge slds-col_bump-left">
+                                        <span class="slds-assistive-text">:</span>{dataItem.private}
+                                    </span>
+                                </a>
+                            </li>
+                        </template>
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+</template>

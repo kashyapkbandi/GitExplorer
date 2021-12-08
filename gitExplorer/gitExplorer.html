@@ -1,0 +1,68 @@
+<template>
+    <div class="MainWrapper" style="width: 80%;margin: auto; height: 60vh;overflow-y:hidden;">
+        <article class="slds-card" style="overflow-y:hidden;">
+            <div class="slds-card__body slds-card__body_inner">
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-3" style="height: 60vh;overflow-y:auto;">
+
+                        <c-git-repo-list onreposelection={showrepoDetails}></c-git-repo-list>
+
+                    </div>
+
+                    <!-- Main body -->
+                    <div class="slds-col slds-size_2-of-3">
+                        <div class="BodyWrap" style="padding: 0;">
+                            <div class="slds-box">
+                                <div class="slds-feed">
+                         
+                                            <article class="slds-post">
+                                                <header class="slds-post__header slds-media">
+                                                    <div class="slds-media__figure">
+                                                        <a href={avatarURL}
+                                                            class="slds-avatar slds-avatar_circle slds-avatar_large">
+                                                            <img alt={login} src={avatarURL}
+                                                                title={login}/>
+                                                        </a>
+                                                    </div>
+                                                    <div class="slds-media__body">
+                                                        <div
+                                                            class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                                            <p>
+                                                                <a href={htmlurl} title={selectedRepo.full_name}>{selectedRepo.full_name}</a> —
+                                                                <a href="#" title={selectedRepo.name}></a>{selectedRepo.name}
+                                                            </p>
+                                                        </div>
+                                                        <p class="slds-text-body_small">
+                                                            <a href={selectedRepo.html_url} title="Click for Html Link"
+                                                                class="slds-text-link_reset">Github Link</a>
+                                                        </p>
+                                                    </div>
+                                                </header>
+                                                <div class="slds-post__content slds-text-longform">
+                                                    <p>{selectedRepo.description}
+                                                    </p>
+                                                </div>                                              
+                                            </article>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+</template>
